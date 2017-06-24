@@ -1,4 +1,4 @@
 Vertebrae
 =========
 
-2D Skeletal animation for Game Developers
+2D skeletal animation tool for games

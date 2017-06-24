@@ -23,6 +23,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
 	ui->setupUi(this);
+
+	// set up shortcuts
+	ui->actionQuit->setShortcuts(QKeySequence::Quit);
+	connect(ui->actionQuit, SIGNAL(triggered()), SLOT(close()));
 }
 
 MainWindow::~MainWindow()

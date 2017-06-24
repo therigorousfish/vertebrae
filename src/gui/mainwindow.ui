@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Vertebrae</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -23,8 +23,273 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="separator"/>
+    <addaction name="actionGroup"/>
+    <addaction name="actionUngroup"/>
+    <addaction name="separator"/>
+    <addaction name="actionParent"/>
+    <addaction name="actionUnparent"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionZoomIn"/>
+    <addaction name="actionZoomOut"/>
+    <addaction name="actionNormalZoom"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAboutVertebrae"/>
+   </widget>
+   <widget class="QMenu" name="menuCreate">
+    <property name="title">
+     <string>&amp;Create</string>
+    </property>
+    <addaction name="actionCreateSprite"/>
+    <addaction name="actionCreateJoint"/>
+    <addaction name="actionCreateLocator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuCreate"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>Main Toolbar</string>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QToolBar" name="toolsToolBar">
+   <property name="windowTitle">
+    <string>Tools</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionNew">
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new project</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>&amp;Open...</string>
+   </property>
+   <property name="statusTip">
+    <string>Open an existing project</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the project to disk</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Save &amp;As...</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the project under a new name</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="statusTip">
+    <string>Exit the application</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>&amp;Cut</string>
+   </property>
+   <property name="statusTip">
+    <string>Cut selection</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="statusTip">
+    <string>Copy selection</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="statusTip">
+    <string>Paste clipboard</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+   <property name="statusTip">
+    <string>Delete selection</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Pre&amp;ferences...</string>
+   </property>
+   <property name="toolTip">
+    <string>Open preferences dialog</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="text">
+    <string>Zoom &amp;in</string>
+   </property>
+   <property name="statusTip">
+    <string>Increase zoom level</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="text">
+    <string>Zoom &amp;Out</string>
+   </property>
+   <property name="statusTip">
+    <string>Decrease zoom level</string>
+   </property>
+  </action>
+  <action name="actionNormalZoom">
+   <property name="text">
+    <string>&amp;Normal Zoom</string>
+   </property>
+   <property name="toolTip">
+    <string>Set zoom to 100%</string>
+   </property>
+  </action>
+  <action name="actionAboutVertebrae">
+   <property name="text">
+    <string>&amp;About Vertebrae</string>
+   </property>
+   <property name="statusTip">
+    <string>Open the About Vertebrae dialog</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionCreateSprite">
+   <property name="text">
+    <string>&amp;Sprite</string>
+   </property>
+  </action>
+  <action name="actionCreateJoint">
+   <property name="text">
+    <string>&amp;Joint</string>
+   </property>
+  </action>
+  <action name="actionGroup">
+   <property name="text">
+    <string>&amp;Group</string>
+   </property>
+   <property name="statusTip">
+    <string>Group selection together</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="actionCreateLocator">
+   <property name="text">
+    <string>&amp;Locator</string>
+   </property>
+  </action>
+  <action name="actionUngroup">
+   <property name="text">
+    <string>&amp;Ungroup</string>
+   </property>
+  </action>
+  <action name="actionParent">
+   <property name="text">
+    <string>Pa&amp;rent</string>
+   </property>
+   <property name="statusTip">
+    <string>Parent selection under the last selected node</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
+   </property>
+  </action>
+  <action name="actionUnparent">
+   <property name="text">
+    <string>Unparen&amp;t</string>
+   </property>
+   <property name="statusTip">
+    <string>Parent selection under the world</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+P</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
