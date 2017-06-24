@@ -7,6 +7,7 @@ set(SOURCES
 	main.cpp
 	mainwindow.cpp
 	${CMAKE_SOURCE_DIR}/include/mainwindow.h
+	${PROJECT_BINARY_DIR}/config.h
 )
 
 set(UI_SOURCES
