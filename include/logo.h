@@ -14,26 +14,28 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VERTEBRAE_MAINWINDOW_H__
-#define VERTEBRAE_MAINWINDOW_H__
+#ifndef LOGO_H
+#define LOGO_H
 
-#include <QMainWindow>
+#include <qopengl.h>
+#include <QVector>
+#include <QVector3D>
 
-namespace Ui {
-	class MainWindow;
-}
-
-class Viewport;
-
-class MainWindow : public QMainWindow
+class Logo
 {
 public:
-	MainWindow(QWidget *parent = Q_NULLPTR);
-	virtual ~MainWindow();
+    Logo();
+    const GLfloat *constData() const { return m_data.constData(); }
+    int count() const { return m_count; }
+    int vertexCount() const { return m_count / 6; }
 
 private:
-	Ui::MainWindow *ui;
-	Viewport *m_viewport;
+    void quad(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLfloat x3, GLfloat y3, GLfloat x4, GLfloat y4);
+    void extrude(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2);
+    void add(const QVector3D &v, const QVector3D &n);
+
+    QVector<GLfloat> m_data;
+    int m_count;
 };
 
-#endif // VERTEBRAE_MAINWINDOW_H__
+#endif // LOGO_H

@@ -6,7 +6,11 @@ find_package(Qt5Widgets)
 set(SOURCES
 	main.cpp
 	mainwindow.cpp
+	viewport.cpp
+	logo.cpp
 	${CMAKE_SOURCE_DIR}/include/mainwindow.h
+	${CMAKE_SOURCE_DIR}/include/viewport.h
+	${CMAKE_SOURCE_DIR}/include/logo.h
 	${PROJECT_BINARY_DIR}/config.h
 )
 

@@ -16,10 +16,12 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "viewport.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent/* = Q_NULLPTR*/)
 	: QMainWindow(parent)
 	, ui(new Ui::MainWindow)
+	, m_viewport(new Viewport(this))
 
 {
 	ui->setupUi(this);
@@ -27,9 +29,12 @@ MainWindow::MainWindow(QWidget *parent)
 	// set up shortcuts
 	ui->actionQuit->setShortcuts(QKeySequence::Quit);
 	connect(ui->actionQuit, SIGNAL(triggered()), SLOT(close()));
+
+	setCentralWidget(m_viewport);
 }
 
 MainWindow::~MainWindow()
 {
+	delete m_viewport;
 	delete ui;
 }

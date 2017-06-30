@@ -14,7 +14,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
