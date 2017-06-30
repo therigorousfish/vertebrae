@@ -10,6 +10,9 @@ set(VERSION_PATCH 0)
 set(VERSION "${VERSION_MAJOR}.${VERSION_MINOR}")
 set(VERSION_FULL "${VERSION}.${VERSION_PATCH}")
 
+# Tell CMake to run moc when necessary:
+set(CMAKE_AUTOMOC ON)
+
 # location of additional cmake modules
 set(CMAKE_MODULE_PATH
     ${CMAKE_MODULE_PATH}
