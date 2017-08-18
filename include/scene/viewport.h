@@ -26,13 +26,19 @@
 
 QT_FORWARD_DECLARE_CLASS(QOpenGLShaderProgram)
 
+class Scene;
+
 class Viewport : public QOpenGLWidget, protected QOpenGLFunctions
 {
 	Q_OBJECT
 
 public:
+	friend class Scene;
+
 	Viewport(QWidget *parent = Q_NULLPTR);
 	virtual ~Viewport();
+
+	void setScene(Scene *scene);
 
 public slots:
 	void cleanup();
@@ -46,6 +52,8 @@ private:
 	void setupVertexAttribs();
 
 private:
+
+	Scene *m_scene;
 
 	bool m_core;
 	int m_xRot;

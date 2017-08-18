@@ -14,7 +14,8 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "viewport.h"
+#include "scene\viewport.h"
+#include "scene\scene.h"
 
 #include <QOpenGLContext>
 #include <QOpenGLShaderProgram>
@@ -47,12 +48,16 @@ Viewport::~Viewport()
 void Viewport::cleanup()
 {
 	makeCurrent();
-	m_logoVbo.destroy();
+	// m_logoVbo.destroy();
 	delete m_program;
 	m_program = 0;
 	doneCurrent();
 }
 
+void Viewport::setScene(Scene *scene)
+{
+	scene->addViewport(this);
+}
 
 static const char *vertexShaderSourceCore =
     "#version 150\n"
