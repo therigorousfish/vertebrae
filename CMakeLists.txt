@@ -41,9 +41,11 @@ configure_file(
     ${PROJECT_SOURCE_DIR}/cmake/config.h.in
     ${PROJECT_BINARY_DIR}/config.h
 )
-
 include_directories(
     ${PROJECT_BINARY_DIR}
 )
+
+find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
+find_package(Boost 1.64.0 REQUIRED COMPONENTS system)
 
 add_subdirectory("src")
