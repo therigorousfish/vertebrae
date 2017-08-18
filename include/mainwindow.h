@@ -32,7 +32,7 @@ public:
 	virtual ~MainWindow();
 
 private:
-	Ui::MainWindow *ui;
+	Ui::MainWindow *m_ui;
 	Viewport *m_viewport;
 };
 
